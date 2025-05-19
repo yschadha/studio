@@ -5,7 +5,7 @@ import { AdOptimalLogo } from '@/components/icons/adoptimal-logo';
 
 export default function Header() {
   return (
-    <header className="bg-background shadow-sm sticky top-0 z-50">
+    <header className="bg-background sticky top-0 z-50 border-b-2 border-primary">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 text-2xl font-semibold text-foreground">
           <AdOptimalLogo className="h-8 w-8 text-foreground" />
