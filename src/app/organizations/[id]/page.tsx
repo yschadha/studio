@@ -106,7 +106,7 @@ export default async function OrganizationProfilePage({ params }: { params: { id
              <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-foreground hover:text-primary rounded-full mt-4 py-3">
                 <Link href="/contact">
                   <MessageSquare className="h-5 w-5 mr-2" />
-                  Contact this Student Org
+                  Contact
                 </Link>
             </Button>
           </div>
