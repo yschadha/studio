@@ -29,7 +29,7 @@ export default function HomePage() {
           <Button
             size="lg"
             asChild
-            className="rounded-full px-6 py-3 text-lg font-semibold" // Removed hardcoded color classes
+            className="rounded-full px-6 py-3 text-lg font-semibold" 
           >
             <Link href="/browse-organizations">
               Explore Student Orgs
@@ -43,7 +43,7 @@ export default function HomePage() {
       <section className="py-12 md:py-16">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-foreground">Why AdOptimal?</h2>
         <div className="grid md:grid-cols-3 gap-8"> {/* gap-8 is 32px */}
-          <Card className="bg-card shadow-xl hover:shadow-2xl transition-all duration-300 rounded-xl transform hover:scale-102">
+          <Card className="bg-card transition-all duration-300 rounded-xl transform hover:scale-102">
             <CardHeader className="items-center pt-8 pb-4">
               <div className="p-4 bg-primary/10 rounded-full mb-4">
                 <Target className="h-10 w-10 text-primary" /> {/* Icon for Targeted Reach */}
@@ -54,7 +54,7 @@ export default function HomePage() {
               Reach the exact campus demo your brand needs with org-specific targeting.
             </CardContent>
           </Card>
-          <Card className="bg-card shadow-xl hover:shadow-2xl transition-all duration-300 rounded-xl transform hover:scale-102">
+          <Card className="bg-card transition-all duration-300 rounded-xl transform hover:scale-102">
             <CardHeader className="items-center pt-8 pb-4">
               <div className="p-4 bg-primary/10 rounded-full mb-4">
                  <Megaphone className="h-10 w-10 text-primary" /> {/* Icon for Authentic Promotion */}
@@ -65,7 +65,7 @@ export default function HomePage() {
               Partner with trusted student leaders for natural, credible advertising.
             </CardContent>
           </Card>
-          <Card className="bg-card shadow-xl hover:shadow-2xl transition-all duration-300 rounded-xl transform hover:scale-102">
+          <Card className="bg-card transition-all duration-300 rounded-xl transform hover:scale-102">
             <CardHeader className="items-center pt-8 pb-4">
               <div className="p-4 bg-primary/10 rounded-full mb-4">
                 <Zap className="h-10 w-10 text-primary" /> {/* Icon for Simple & Effective */}
