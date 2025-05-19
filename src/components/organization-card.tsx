@@ -34,26 +34,34 @@ export default function OrganizationCard({ organization }: OrganizationCardProps
           </Badge>
         )}
       </CardHeader>
-      <CardContent className="flex-grow p-6 space-y-3">
+      <CardContent className="flex-grow p-6 space-y-4"> {/* Adjusted space-y for overall content spacing */}
         <CardTitle className="text-xl text-foreground">{organization.name}</CardTitle>
-        <CardDescription className="line-clamp-3 text-muted-foreground">{organization.description}</CardDescription>
+        <CardDescription className="line-clamp-3 text-muted-foreground h-[3.75rem]">{/* Ensure consistent height for description */organization.description}</CardDescription>
         
-        <div className="grid grid-cols-2 gap-x-4 gap-y-2 pt-2 text-sm text-muted-foreground border-t mt-3">
-          <div className="flex items-center mt-2">
-            <School className="h-4 w-4 mr-2 text-primary flex-shrink-0" />
-            <span>{organization.collegeName}</span>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-5 pt-4 border-t mt-4">
+          {/* College Name */}
+          <div className="flex flex-col items-center text-center space-y-0.5">
+            <School className="h-5 w-5 text-primary" />
+            <p className="text-xs text-muted-foreground/90">College</p>
+            <p className="text-sm font-medium text-foreground">{organization.collegeName}</p>
           </div>
-          <div className="flex items-center mt-2">
-            <Users className="h-4 w-4 mr-2 text-primary flex-shrink-0" />
-            <span>{organization.instagramFollowers.toLocaleString()} Followers</span>
+          {/* Instagram Followers */}
+          <div className="flex flex-col items-center text-center space-y-0.5">
+            <Users className="h-5 w-5 text-primary" />
+            <p className="text-xs text-muted-foreground/90">Followers</p>
+            <p className="text-sm font-medium text-foreground">{organization.instagramFollowers.toLocaleString()}</p>
           </div>
-          <div className="flex items-center mt-2">
-            <Users className="h-4 w-4 mr-2 text-primary flex-shrink-0" /> 
-            <span>{organization.members.toLocaleString()} Members</span>
+          {/* Members */}
+          <div className="flex flex-col items-center text-center space-y-0.5">
+            <Users className="h-5 w-5 text-primary" /> 
+            <p className="text-xs text-muted-foreground/90">Members</p>
+            <p className="text-sm font-medium text-foreground">{organization.members.toLocaleString()}</p>
           </div>
-          <div className="flex items-center mt-2">
-            <CalendarDays className="h-4 w-4 mr-2 text-primary flex-shrink-0" />
-            <span>Founded: {organization.dateFounded}</span>
+          {/* Date Founded */}
+          <div className="flex flex-col items-center text-center space-y-0.5">
+            <CalendarDays className="h-5 w-5 text-primary" />
+            <p className="text-xs text-muted-foreground/90">Founded</p>
+            <p className="text-sm font-medium text-foreground">{organization.dateFounded}</p>
           </div>
         </div>
       </CardContent>
