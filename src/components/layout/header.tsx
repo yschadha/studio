@@ -8,12 +8,12 @@ export default function Header() {
     <header className="bg-background shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 text-2xl font-semibold text-foreground">
-          <AdOptimalLogo className="h-8 w-8 text-foreground" /> {/* Logo will be black */}
+          <AdOptimalLogo className="h-8 w-8 text-foreground" />
           <span>AdOptimal</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
           {NAV_LINKS.map((link) => (
-            <Button key={link.href} variant="ghost" asChild className="text-foreground hover:bg-muted hover:text-primary rounded-md px-4 py-2">
+            <Button key={link.href} variant="ghost" asChild className="text-foreground hover:bg-black hover:text-primary rounded-md px-4 py-2">
               <Link href={link.href}>{link.label}</Link>
             </Button>
           ))}
