@@ -50,7 +50,7 @@ export default function BrowseOrganizationsPage() {
           <h1 className="text-4xl font-bold text-foreground mb-2">Discover Student Organizations</h1>
           <p className="text-lg text-muted-foreground">Find the perfect partners for your campus campaigns.</p>
         </div>
-        <div className="p-6 bg-card rounded-xl shadow-lg space-y-6">
+        <div className="p-6 bg-card rounded-xl space-y-6">
           <p className="text-muted-foreground">Loading filters...</p>
         </div>
          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -74,7 +74,7 @@ export default function BrowseOrganizationsPage() {
         <p className="text-lg text-muted-foreground">Find the perfect partners for your campus campaigns.</p>
       </div>
 
-      <div className="p-6 bg-card rounded-xl shadow-lg space-y-6">
+      <div className="p-6 bg-card rounded-xl space-y-6"> {/* Removed shadow-lg */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
           <div>
             <Label htmlFor="search" className="block text-sm font-medium text-foreground mb-1">Search by Name</Label>
