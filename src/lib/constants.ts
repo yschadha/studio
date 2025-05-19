@@ -1,10 +1,12 @@
+
 import type { LucideIcon } from 'lucide-react';
-import { BookOpen, Palette, Swords, Users, Cpu, HeartHandshake, Briefcase, Gamepad2, DollarSign, BarChart3, Filter } from 'lucide-react';
+import { BookOpen, Palette, Swords, Users, Cpu, HeartHandshake, Briefcase, Gamepad2, DollarSign, BarChart3, Filter, Megaphone, FileText, Share2, Camera, Mic, Lightbulb, Store, Handshake, Video, Star } from 'lucide-react';
 
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/browse-organizations', label: 'Browse Organizations' },
+  { href: '/ad-opportunities', label: 'Ad Opportunities' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
@@ -116,5 +118,75 @@ export const MOCK_ORGANIZATIONS: Organization[] = [
     startingRate: 35,
     profileImage: 'https://placehold.co/300x200.png',
     description: 'Celebrating diversity and fostering intercultural understanding through events and activities.',
+  },
+];
+
+export interface AdOpportunity {
+  id: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}
+
+export const AD_OPPORTUNITIES: AdOpportunity[] = [
+  {
+    id: '1',
+    title: 'Rush Event Sponsorships',
+    description: 'Boost your brand visibility by sponsoring high-energy recruitment events. Includes logo placement, shout-outs, and even product giveaways.',
+    icon: Megaphone,
+  },
+  {
+    id: '2',
+    title: 'Campus Flyering',
+    description: 'Distribute physical or digital flyers across high-traffic campus spots and student events for direct visibility and engagement.',
+    icon: FileText,
+  },
+  {
+    id: '3',
+    title: 'Social Media Campaigns',
+    description: 'Reach real student audiences through Instagram, TikTok, and Facebook posts created by trusted student organizations.',
+    icon: Share2,
+  },
+  {
+    id: '4',
+    title: 'Modeling & Product Showcases',
+    description: 'Have student leaders feature your product on social media or at events, acting as authentic campus brand ambassadors.',
+    icon: Camera,
+  },
+  {
+    id: '5',
+    title: 'Guest Speaker Sponsorship',
+    description: 'Sponsor influential speaker events or workshops and get a spotlight moment to introduce your brand to an engaged student audience.',
+    icon: Mic,
+  },
+  {
+    id: '6',
+    title: 'Case Competitions',
+    description: 'Challenge students with real-world problems tied to your industry while gaining brand exposure and access to top talent.',
+    icon: Lightbulb,
+  },
+  {
+    id: '7',
+    title: 'Event Activation Booths',
+    description: 'Set up an interactive booth at high-attendance student events to create face-to-face brand experiences and live engagement.',
+    icon: Store,
+  },
+  {
+    id: '8',
+    title: 'Networking & Mixer Sponsorships',
+    description: 'Be the face behind student networking events and mixers. Get direct access to emerging talent while building brand loyalty.',
+    icon: Handshake,
+  },
+  {
+    id: '9',
+    title: 'Branded Video Collaborations',
+    description: 'Partner with student creators to produce high-quality, branded video content—ideal for reels, interviews, or event highlights.',
+    icon: Video,
+  },
+  {
+    id: '10',
+    title: 'Influencer-Style Product Reviews',
+    description: 'Let popular student voices review your product authentically across their platforms. Think micro-influencer meets college credibility.',
+    icon: Star,
   },
 ];
