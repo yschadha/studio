@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -56,7 +57,7 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-8"> {/* gap-8 is 32px */}
           <Card className="bg-card transition-all duration-300 rounded-xl transform hover:scale-102">
             <CardHeader className="items-center pt-8 pb-4">
-              <div className="p-4 bg-primary/10 rounded-full mb-4">
+              <div className="p-4 bg-primary/10 rounded-full mb-4 border border-foreground">
                 <Target className="h-10 w-10 text-primary" /> {/* Icon for Targeted Reach */}
               </div>
               <CardTitle className="text-lg font-bold text-foreground">Targeted Reach</CardTitle> {/* 18px bold */}
@@ -67,7 +68,7 @@ export default function HomePage() {
           </Card>
           <Card className="bg-card transition-all duration-300 rounded-xl transform hover:scale-102">
             <CardHeader className="items-center pt-8 pb-4">
-              <div className="p-4 bg-primary/10 rounded-full mb-4">
+              <div className="p-4 bg-primary/10 rounded-full mb-4 border border-foreground">
                  <Megaphone className="h-10 w-10 text-primary" /> {/* Icon for Authentic Promotion */}
               </div>
               <CardTitle className="text-lg font-bold text-foreground">Authentic Promotion</CardTitle> {/* 18px bold */}
@@ -78,7 +79,7 @@ export default function HomePage() {
           </Card>
           <Card className="bg-card transition-all duration-300 rounded-xl transform hover:scale-102">
             <CardHeader className="items-center pt-8 pb-4">
-              <div className="p-4 bg-primary/10 rounded-full mb-4">
+              <div className="p-4 bg-primary/10 rounded-full mb-4 border border-foreground">
                 <Zap className="h-10 w-10 text-primary" /> {/* Icon for Simple & Effective */}
               </div>
               <CardTitle className="text-lg font-bold text-foreground">Simple & Effective</CardTitle> {/* 18px bold */}
