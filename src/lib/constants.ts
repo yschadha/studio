@@ -1,6 +1,6 @@
 
 import type { LucideIcon } from 'lucide-react';
-import { BookOpen, Palette, Swords, Users, Cpu, HeartHandshake, Briefcase, Gamepad2, DollarSign, BarChart3, Filter, Megaphone, FileText, Share2, Camera, Mic, Lightbulb, Store, Handshake, Video, Star, CalendarDays, School } from 'lucide-react';
+import { BookOpen, Palette, Swords, Users, Cpu, HeartHandshake, Briefcase, Gamepad2, DollarSign, BarChart3, Filter, Megaphone, FileText, Share2, Camera, Mic, Lightbulb, Store, Handshake, Video, Star, CalendarDays, School, TrendingUp } from 'lucide-react';
 
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -26,6 +26,7 @@ export const ORGANIZATION_CATEGORIES: OrganizationCategory[] = [
   { value: 'volunteering', label: 'Volunteering', icon: HeartHandshake },
   { value: 'professional', label: 'Professional', icon: Briefcase },
   { value: 'gaming', label: 'Gaming', icon: Gamepad2 },
+  { value: 'business', label: 'Business', icon: TrendingUp },
 ];
 
 export interface Organization {
@@ -33,7 +34,6 @@ export interface Organization {
   name: string;
   type: string; // Corresponds to OrganizationCategory value
   instagramFollowers: number;
-  startingRate: number;
   profileImage: string;
   description: string;
   contactEmail?: string;
@@ -45,106 +45,17 @@ export interface Organization {
 
 export const MOCK_ORGANIZATIONS: Organization[] = [
   {
-    id: '1',
-    name: 'Tech Innovators Club',
-    type: 'technology',
-    instagramFollowers: 1250,
-    startingRate: 50,
+    id: 'bgi-1',
+    name: 'Bruin Growth Incubator',
+    type: 'business',
+    instagramFollowers: 100,
     profileImage: 'https://placehold.co/300x200.png',
-    description: 'Fostering innovation and tech skills among students. We host workshops, hackathons, and speaker events.',
-    contactEmail: 'techinnovators@example.com',
-    website: 'https://techinnovators.example.com',
-    members: 75,
-    dateFounded: 'Fall 2018',
-    collegeName: 'State University',
-  },
-  {
-    id: '2',
-    name: 'Campus Artists Collective',
-    type: 'arts-culture',
-    instagramFollowers: 850,
-    startingRate: 30,
-    profileImage: 'https://placehold.co/300x200.png',
-    description: 'A vibrant community for student artists. We organize exhibitions, art jams, and collaborative projects.',
-    contactEmail: 'artcollective@example.com',
-    members: 50,
-    dateFounded: 'Spring 2019',
-    collegeName: 'Liberal Arts College',
-  },
-  {
-    id: '3',
-    name: 'University Sports League',
-    type: 'sports-recreation',
-    instagramFollowers: 2100,
-    startingRate: 75,
-    profileImage: 'https://placehold.co/300x200.png',
-    description: 'Promoting sportsmanship and fitness on campus. Join our leagues for various sports!',
-    website: 'https://sportleague.example.com',
-    members: 300,
-    dateFounded: 'Fall 2015',
-    collegeName: 'State University',
-  },
-  {
-    id: '4',
-    name: 'Student Coders Society',
-    type: 'academic',
-    instagramFollowers: 980,
-    startingRate: 40,
-    profileImage: 'https://placehold.co/300x200.png',
-    description: 'Dedicated to advancing coding skills and knowledge through peer learning and projects.',
-    members: 90,
-    dateFounded: 'Spring 2020',
-    collegeName: 'Tech Institute',
-  },
-  {
-    id: '5',
-    name: 'Gamers United Hub',
-    type: 'gaming',
-    instagramFollowers: 1500,
-    startingRate: 60,
-    profileImage: 'https://placehold.co/300x200.png',
-    description: 'The central hub for all gamers on campus. Tournaments, casual play, and game development discussions.',
-    members: 120,
-    dateFounded: 'Fall 2017',
-    collegeName: 'Community College',
-  },
-  {
-    id: '6',
-    name: 'Community Outreach Program',
-    type: 'volunteering',
-    instagramFollowers: 600,
-    startingRate: 25,
-    profileImage: 'https://placehold.co/300x200.png',
-    description: 'Making a difference in our local community through various volunteering initiatives and projects.',
-    members: 40,
-    dateFounded: 'Spring 2021',
-    collegeName: 'City College',
-  },
-   {
-    id: '7',
-    name: 'Future Leaders Network',
-    type: 'professional',
-    instagramFollowers: 1100,
-    startingRate: 65,
-    profileImage: 'https://placehold.co/300x200.png',
-    description: 'Connecting ambitious students with professionals and providing resources for career development.',
-    contactEmail: 'futureleaders@example.com',
-    website: 'https://futureleaders.example.com',
-    members: 100,
-    dateFounded: 'Fall 2019',
-    collegeName: 'Business School University',
-  },
-  {
-    id: '8',
-    name: 'Cultural Exchange Society',
-    type: 'social-community',
-    instagramFollowers: 720,
-    startingRate: 35,
-    profileImage: 'https://placehold.co/300x200.png',
-    description: 'Celebrating diversity and fostering intercultural understanding through events and activities.',
-    members: 65,
-    dateFounded: 'Spring 2018',
-    collegeName: 'International University',
+    description: 'Bruin Growth Incubator is a student-led organization dedicated to helping UCLA students explore and succeed in the startup world. Our mission is to make it easier for students to join existing startups, create their own businesses, and find talented developers to build their ideas. We are committed to supporting underrepresented communities by providing access to opportunities, resources, and a strong network to help them thrive in entrepreneurship. Whether you’re looking for your first role in a startup, building a business, or assembling a team, Bruin Growth Incubator is here to guide and support you.',
+    members: 15,
+    dateFounded: '2024',
+    collegeName: 'UCLA',
+    contactEmail: 'bruingrowth@example.com', // Added a placeholder email
+    website: 'https://bruingrowth.example.com' // Added a placeholder website
   },
 ];
 
