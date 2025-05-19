@@ -12,13 +12,13 @@ import { Button } from '@/components/ui/button';
 import { XIcon, SearchIcon, Users } from 'lucide-react';
 
 const MAX_FOLLOWERS = Math.max(...MOCK_ORGANIZATIONS.map(org => org.instagramFollowers), 5000);
-const MAX_MEMBERS = Math.max(...MOCK_ORGANIZATIONS.map(org => org.members), 100); // New constant for max members
+const MAX_MEMBERS = Math.max(...MOCK_ORGANIZATIONS.map(org => org.members), 100); 
 
 export default function BrowseOrganizationsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [followerRange, setFollowerRange] = useState<[number, number]>([0, MAX_FOLLOWERS]);
-  const [memberRange, setMemberRange] = useState<[number, number]>([0, MAX_MEMBERS]); // New state for member range
+  const [memberRange, setMemberRange] = useState<[number, number]>([0, MAX_MEMBERS]); 
   
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function BrowseOrganizationsPage() {
       const nameMatch = org.name.toLowerCase().includes(searchTerm.toLowerCase());
       const categoryMatch = selectedCategory === 'all' || org.type === selectedCategory;
       const followerMatch = org.instagramFollowers >= followerRange[0] && org.instagramFollowers <= followerRange[1];
-      const memberMatch = org.members >= memberRange[0] && org.members <= memberRange[1]; // New match condition for members
+      const memberMatch = org.members >= memberRange[0] && org.members <= memberRange[1]; 
       return nameMatch && categoryMatch && followerMatch && memberMatch;
     });
   }, [searchTerm, selectedCategory, followerRange, memberRange]);
@@ -40,7 +40,7 @@ export default function BrowseOrganizationsPage() {
     setSearchTerm('');
     setSelectedCategory('all');
     setFollowerRange([0, MAX_FOLLOWERS]);
-    setMemberRange([0, MAX_MEMBERS]); // Reset member range
+    setMemberRange([0, MAX_MEMBERS]); 
   };
 
   if (!isMounted) {
@@ -86,14 +86,14 @@ export default function BrowseOrganizationsPage() {
                 placeholder="e.g., Tech Club"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 rounded-md" 
+                className="pl-10 rounded-full" 
               />
             </div>
           </div>
           <div>
             <Label htmlFor="category" className="block text-sm font-medium text-foreground mb-1">Category</Label>
             <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger id="category" className="rounded-md">
+              <SelectTrigger id="category" className="rounded-full">
                 <SelectValue placeholder="Select Category" />
               </SelectTrigger>
               <SelectContent>
@@ -124,16 +124,16 @@ export default function BrowseOrganizationsPage() {
               />
             </div>
             <div>
-              <Label htmlFor="members" className="block text-sm font-medium text-foreground mb-1"> {/* Changed from rate to members */}
+              <Label htmlFor="members" className="block text-sm font-medium text-foreground mb-1"> 
                 Number of Members: {memberRange[0].toLocaleString()} - {memberRange[1].toLocaleString()}
               </Label>
               <Slider
-                id="members" // Changed from rate to members
+                id="members" 
                 min={0}
-                max={MAX_MEMBERS} // Changed from MAX_RATE to MAX_MEMBERS
-                step={5} // Adjust step as appropriate for member counts
-                value={[memberRange[0], memberRange[1]]} // Changed from rateRange to memberRange
-                onValueChange={(value) => setMemberRange(value as [number, number])} // Changed from setRateRange to setMemberRange
+                max={MAX_MEMBERS} 
+                step={5} 
+                value={[memberRange[0], memberRange[1]]} 
+                onValueChange={(value) => setMemberRange(value as [number, number])} 
                 className="mt-3"
               />
             </div>
