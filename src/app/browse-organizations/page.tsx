@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
@@ -8,16 +9,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Slider } from "@/components/ui/slider";
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import { XIcon, SearchIcon } from 'lucide-react';
+import { XIcon, SearchIcon, Users } from 'lucide-react';
 
 const MAX_FOLLOWERS = Math.max(...MOCK_ORGANIZATIONS.map(org => org.instagramFollowers), 5000);
-const MAX_RATE = Math.max(...MOCK_ORGANIZATIONS.map(org => org.startingRate), 100);
+const MAX_MEMBERS = Math.max(...MOCK_ORGANIZATIONS.map(org => org.members), 100); // New constant for max members
 
 export default function BrowseOrganizationsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [followerRange, setFollowerRange] = useState<[number, number]>([0, MAX_FOLLOWERS]);
-  const [rateRange, setRateRange] = useState<[number, number]>([0, MAX_RATE]);
+  const [memberRange, setMemberRange] = useState<[number, number]>([0, MAX_MEMBERS]); // New state for member range
   
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
@@ -30,16 +31,16 @@ export default function BrowseOrganizationsPage() {
       const nameMatch = org.name.toLowerCase().includes(searchTerm.toLowerCase());
       const categoryMatch = selectedCategory === 'all' || org.type === selectedCategory;
       const followerMatch = org.instagramFollowers >= followerRange[0] && org.instagramFollowers <= followerRange[1];
-      const rateMatch = org.startingRate >= rateRange[0] && org.startingRate <= rateRange[1];
-      return nameMatch && categoryMatch && followerMatch && rateMatch;
+      const memberMatch = org.members >= memberRange[0] && org.members <= memberRange[1]; // New match condition for members
+      return nameMatch && categoryMatch && followerMatch && memberMatch;
     });
-  }, [searchTerm, selectedCategory, followerRange, rateRange]);
+  }, [searchTerm, selectedCategory, followerRange, memberRange]);
 
   const resetFilters = () => {
     setSearchTerm('');
     setSelectedCategory('all');
     setFollowerRange([0, MAX_FOLLOWERS]);
-    setRateRange([0, MAX_RATE]);
+    setMemberRange([0, MAX_MEMBERS]); // Reset member range
   };
 
   if (!isMounted) {
@@ -123,16 +124,16 @@ export default function BrowseOrganizationsPage() {
               />
             </div>
             <div>
-              <Label htmlFor="rate" className="block text-sm font-medium text-foreground mb-1">
-                Starting Rate: ${rateRange[0]} - ${rateRange[1]}
+              <Label htmlFor="members" className="block text-sm font-medium text-foreground mb-1"> {/* Changed from rate to members */}
+                Number of Members: {memberRange[0].toLocaleString()} - {memberRange[1].toLocaleString()}
               </Label>
               <Slider
-                id="rate"
+                id="members" // Changed from rate to members
                 min={0}
-                max={MAX_RATE}
-                step={5}
-                value={[rateRange[0], rateRange[1]]}
-                onValueChange={(value) => setRateRange(value as [number, number])}
+                max={MAX_MEMBERS} // Changed from MAX_RATE to MAX_MEMBERS
+                step={5} // Adjust step as appropriate for member counts
+                value={[memberRange[0], memberRange[1]]} // Changed from rateRange to memberRange
+                onValueChange={(value) => setMemberRange(value as [number, number])} // Changed from setRateRange to setMemberRange
                 className="mt-3"
               />
             </div>
