@@ -16,8 +16,8 @@ export default function OrganizationCard({ organization }: OrganizationCardProps
   const category = ORGANIZATION_CATEGORIES.find(cat => cat.value === organization.type);
   const CategoryIcon = category?.icon;
 
-  // Specific hint for BGI logo, general for others
-  const imageHint = organization.id === 'bgi-1' ? 'Bruin Growth Incubator logo' : `${organization.type} students`;
+  // Specific hint for BGI logo, general for others. Max two words.
+  const imageHint = organization.id === 'bgi-1' ? 'BGI logo' : `${organization.type} students`;
 
 
   return (
@@ -27,8 +27,8 @@ export default function OrganizationCard({ organization }: OrganizationCardProps
           src={organization.profileImage}
           alt={organization.name}
           width={400}
-          height={200} // Adjusted to match placeholder if it's 400x200, or keep if image itself is this aspect
-          className="object-cover w-full h-48" // h-48 is 12rem, ensure placeholder matches this aspect or image content fits
+          height={200} 
+          className="object-cover w-full h-48" 
           data-ai-hint={imageHint}
         />
          {CategoryIcon && (
@@ -38,9 +38,9 @@ export default function OrganizationCard({ organization }: OrganizationCardProps
           </Badge>
         )}
       </CardHeader>
-      <CardContent className="flex-grow p-6 space-y-4"> {/* Adjusted space-y for overall content spacing */}
+      <CardContent className="flex-grow p-6 space-y-4"> 
         <CardTitle className="text-xl text-foreground">{organization.name}</CardTitle>
-        <CardDescription className="line-clamp-3 text-muted-foreground h-[3.75rem]">{/* Ensure consistent height for description */organization.description}</CardDescription>
+        <CardDescription className="line-clamp-3 text-muted-foreground h-[3.75rem]">{organization.description}</CardDescription>
         
         <div className="grid grid-cols-2 gap-x-4 gap-y-5 pt-4 border-t mt-4">
           {/* College Name */}

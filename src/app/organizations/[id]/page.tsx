@@ -29,8 +29,8 @@ export default async function OrganizationProfilePage({ params }: { params: { id
   const category = ORGANIZATION_CATEGORIES.find(cat => cat.value === organization.type);
   const CategoryIcon = category?.icon;
   
-  // Specific hint for BGI logo, general for others
-  const imageHint = organization.id === 'bgi-1' ? 'Bruin Growth Incubator logo' : `${organization.type} event campus`;
+  // Specific hint for BGI logo, general for others. Max two words.
+  const imageHint = organization.id === 'bgi-1' ? 'BGI logo' : `${organization.type} event`;
 
   return (
     <div className="py-8 md:py-12 space-y-8">
