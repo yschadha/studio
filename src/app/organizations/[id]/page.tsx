@@ -28,6 +28,9 @@ export default async function OrganizationProfilePage({ params }: { params: { id
 
   const category = ORGANIZATION_CATEGORIES.find(cat => cat.value === organization.type);
   const CategoryIcon = category?.icon;
+  
+  // Specific hint for BGI logo, general for others
+  const imageHint = organization.id === 'bgi-1' ? 'Bruin Growth Incubator logo' : `${organization.type} event campus`;
 
   return (
     <div className="py-8 md:py-12 space-y-8">
@@ -45,7 +48,7 @@ export default async function OrganizationProfilePage({ params }: { params: { id
             alt={`${organization.name} banner`}
             fill
             className="object-cover"
-            data-ai-hint={`${organization.type} event campus`}
+            data-ai-hint={imageHint}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />

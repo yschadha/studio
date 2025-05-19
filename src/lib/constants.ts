@@ -49,13 +49,13 @@ export const MOCK_ORGANIZATIONS: Organization[] = [
     name: 'Bruin Growth Incubator',
     type: 'business',
     instagramFollowers: 100,
-    profileImage: 'https://placehold.co/300x200.png',
+    profileImage: 'https://placehold.co/400x300.png', // Updated placeholder
     description: 'Bruin Growth Incubator is a student-led organization dedicated to helping UCLA students explore and succeed in the startup world. Our mission is to make it easier for students to join existing startups, create their own businesses, and find talented developers to build their ideas. We are committed to supporting underrepresented communities by providing access to opportunities, resources, and a strong network to help them thrive in entrepreneurship. Whether you’re looking for your first role in a startup, building a business, or assembling a team, Bruin Growth Incubator is here to guide and support you.',
     members: 15,
     dateFounded: '2024',
     collegeName: 'UCLA',
-    contactEmail: 'bruingrowth@example.com', // Added a placeholder email
-    website: 'https://bruingrowth.example.com' // Added a placeholder website
+    contactEmail: 'bruingrowth@example.com',
+    website: 'https://bruingrowth.example.com'
   },
 ];
 

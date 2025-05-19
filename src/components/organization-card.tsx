@@ -16,6 +16,10 @@ export default function OrganizationCard({ organization }: OrganizationCardProps
   const category = ORGANIZATION_CATEGORIES.find(cat => cat.value === organization.type);
   const CategoryIcon = category?.icon;
 
+  // Specific hint for BGI logo, general for others
+  const imageHint = organization.id === 'bgi-1' ? 'Bruin Growth Incubator logo' : `${organization.type} students`;
+
+
   return (
     <Card className="flex flex-col h-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-card transform hover:scale-102">
       <CardHeader className="relative p-0">
@@ -23,9 +27,9 @@ export default function OrganizationCard({ organization }: OrganizationCardProps
           src={organization.profileImage}
           alt={organization.name}
           width={400}
-          height={200}
-          className="object-cover w-full h-48"
-          data-ai-hint={`${organization.type} students`}
+          height={200} // Adjusted to match placeholder if it's 400x200, or keep if image itself is this aspect
+          className="object-cover w-full h-48" // h-48 is 12rem, ensure placeholder matches this aspect or image content fits
+          data-ai-hint={imageHint}
         />
          {CategoryIcon && (
           <Badge variant="secondary" className="absolute top-3 right-3 bg-background/80 backdrop-blur-sm text-foreground shadow-sm">
