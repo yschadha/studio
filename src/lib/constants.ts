@@ -49,7 +49,7 @@ export const MOCK_ORGANIZATIONS: Organization[] = [
     name: 'Bruin Growth Incubator',
     type: 'business',
     instagramFollowers: 100,
-    profileImage: '/images/bgi-logo.png', // Updated path
+    profileImage: '/images/bgi-logo.png', // Ensuring this path is correct for local public image
     description: 'Bruin Growth Incubator is a student-led organization dedicated to helping UCLA students explore and succeed in the startup world. Our mission is to make it easier for students to join existing startups, create their own businesses, and find talented developers to build their ideas. We are committed to supporting underrepresented communities by providing access to opportunities, resources, and a strong network to help them thrive in entrepreneurship. Whether you’re looking for your first role in a startup, building a business, or assembling a team, Bruin Growth Incubator is here to guide and support you.',
     members: 15,
     dateFounded: '2024',
