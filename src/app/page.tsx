@@ -37,7 +37,7 @@ export default function HomePage() {
             <div className="md:w-1/2 w-full mt-8 md:mt-0">
               <div className="relative w-full aspect-video rounded-xl shadow-2xl overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1554005702-71599e422c98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx1Y2xhfGVufDB8fHx8MTc0NzY5MjQzNnww&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1631153127293-8588327c515c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1Y2xhfGVufDB8fHx8MTc0NzY5MjQzNnww&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Students handing out flyers or tabling on a vibrant campus"
                   fill
                   className="object-cover"
