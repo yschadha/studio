@@ -10,10 +10,10 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="text-center pt-8 md:pt-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#0A2342] mb-6 max-w-3xl mx-auto font-sans">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-foreground mb-6 max-w-3xl mx-auto font-sans">
             Connect Your Brand with Campus Buzz
           </h1>
-          <p className="text-lg md:text-xl text-[#475569] max-w-xl md:max-w-[60%] mx-auto mb-10 font-sans">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-xl md:max-w-[60%] mx-auto mb-10 font-sans">
             AdOptimal connects businesses with trusted student voices across college campuses. Partner with student orgs for flyering, content, and events—all in one place.
           </p>
           <div className="relative w-full max-w-5xl aspect-[16/7] md:aspect-[16/6] mx-auto mb-10 rounded-lg shadow-2xl overflow-hidden">
@@ -29,7 +29,7 @@ export default function HomePage() {
           <Button
             size="lg"
             asChild
-            className="bg-[#0A2342] text-[#FFD100] hover:bg-[#FFD100] hover:text-[#0A2342] rounded-full px-6 py-3 text-lg font-semibold"
+            className="rounded-full px-6 py-3 text-lg font-semibold" // Removed hardcoded color classes
           >
             <Link href="/browse-organizations">
               Explore Student Orgs
@@ -90,7 +90,7 @@ export default function HomePage() {
             variant="outline"
             size="lg"
             asChild
-            className="border-foreground text-foreground hover:bg-foreground hover:text-background rounded-full px-8 py-4 text-lg font-semibold"
+            className="border-foreground text-foreground hover:bg-black hover:text-white rounded-full px-8 py-4 text-lg font-semibold"
           >
             <Link href="/how-it-works">Learn How It Works</Link>
           </Button>
