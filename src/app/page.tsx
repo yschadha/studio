@@ -8,34 +8,45 @@ export default function HomePage() {
   return (
     <div className="space-y-16 md:space-y-24 py-8">
       {/* Hero Section */}
-      <section className="text-center pt-8 md:pt-16">
+      <section className="pt-8 md:py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-foreground mb-6 max-w-3xl mx-auto font-sans">
-            Connect Your Brand with Campus Buzz
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-xl md:max-w-[60%] mx-auto mb-10 font-sans">
-            AdOptimal connects businesses with trusted student voices across college campuses. Partner with student orgs for flyering, content, and events—all in one place.
-          </p>
-          <div className="relative w-full max-w-5xl aspect-[16/7] md:aspect-[16/6] mx-auto mb-10 rounded-lg shadow-2xl overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1554005702-71599e422c98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx1Y2xhfGVufDB8fHx8MTc0NzY5MjQzNnww&ixlib=rb-4.1.0&q=80&w=1080"
-              alt="Students handing out flyers or tabling on a vibrant campus"
-              fill
-              className="object-cover"
-              data-ai-hint="students campus high-contrast desaturated"
-              priority
-            />
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            {/* Text Content Column */}
+            <div className="md:w-1/2 text-center md:text-left space-y-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-foreground font-sans">
+                Connect Your Brand with Campus Buzz
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground font-sans">
+                AdOptimal connects businesses with trusted student voices across college campuses. Partner with student orgs for flyering, content, and events—all in one place.
+              </p>
+              <div className="pt-2">
+                <Button
+                  size="lg"
+                  asChild
+                  className="rounded-full px-6 py-3 text-lg font-semibold"
+                >
+                  <Link href="/browse-organizations">
+                    Explore Student Orgs
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Image Column */}
+            <div className="md:w-1/2 w-full mt-8 md:mt-0">
+              <div className="relative w-full aspect-video rounded-xl shadow-2xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1554005702-71599e422c98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx1Y2xhfGVufDB8fHx8MTc0NzY5MjQzNnww&ixlib=rb-4.1.0&q=80&w=1080"
+                  alt="Students handing out flyers or tabling on a vibrant campus"
+                  fill
+                  className="object-cover"
+                  data-ai-hint="students campus high-contrast desaturated"
+                  priority
+                />
+              </div>
+            </div>
           </div>
-          <Button
-            size="lg"
-            asChild
-            className="rounded-full px-6 py-3 text-lg font-semibold"
-          >
-            <Link href="/browse-organizations">
-              Explore Student Orgs
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
         </div>
       </section>
 
