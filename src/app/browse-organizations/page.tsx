@@ -74,7 +74,7 @@ export default function BrowseOrganizationsPage() {
         <p className="text-lg text-muted-foreground">Find the perfect partners for your campus campaigns.</p>
       </div>
 
-      <div className="p-6 bg-card rounded-xl space-y-6"> {/* Removed shadow-lg */}
+      <div className="p-6 bg-card rounded-xl space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
           <div>
             <Label htmlFor="search" className="block text-sm font-medium text-foreground mb-1">Search by Name</Label>
@@ -86,14 +86,14 @@ export default function BrowseOrganizationsPage() {
                 placeholder="e.g., Tech Club"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 rounded-full" 
+                className="pl-10 rounded-full border-foreground" 
               />
             </div>
           </div>
           <div>
             <Label htmlFor="category" className="block text-sm font-medium text-foreground mb-1">Category</Label>
             <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger id="category" className="rounded-full">
+              <SelectTrigger id="category" className="rounded-full border-foreground">
                 <SelectValue placeholder="Select Category" />
               </SelectTrigger>
               <SelectContent>
