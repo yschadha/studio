@@ -1,9 +1,10 @@
+
 import Image from 'next/image';
 import { MOCK_ORGANIZATIONS, ORGANIZATION_CATEGORIES, Organization } from '@/lib/constants';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'; // CardDescription removed as not directly used for titles
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Users, DollarSign, Mail, Globe, MessageSquare } from 'lucide-react'; // Replaced LinkIcon with MessageSquare for discuss
+import { ArrowLeft, Users, DollarSign, Mail, Globe, MessageSquare, CalendarDays, School } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -65,9 +66,21 @@ export default async function OrganizationProfilePage({ params }: { params: { id
             
             <div className="space-y-4 pt-4 border-t">
                 <h3 className="text-xl font-semibold text-foreground">Key Information</h3>
+                 <div className="flex items-center text-muted-foreground">
+                  <School className="h-5 w-5 mr-3 text-primary" />
+                  <span>{organization.collegeName}</span>
+                </div>
                 <div className="flex items-center text-muted-foreground">
                   <Users className="h-5 w-5 mr-3 text-primary" />
                   <span>{organization.instagramFollowers.toLocaleString()} Instagram Followers</span>
+                </div>
+                <div className="flex items-center text-muted-foreground">
+                  <Users className="h-5 w-5 mr-3 text-primary" />
+                  <span>{organization.members.toLocaleString()} Members</span>
+                </div>
+                <div className="flex items-center text-muted-foreground">
+                  <CalendarDays className="h-5 w-5 mr-3 text-primary" />
+                  <span>Founded: {organization.dateFounded}</span>
                 </div>
                 <div className="flex items-center text-muted-foreground">
                   <DollarSign className="h-5 w-5 mr-3 text-primary" />
