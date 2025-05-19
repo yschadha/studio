@@ -4,7 +4,7 @@ import { MOCK_ORGANIZATIONS, ORGANIZATION_CATEGORIES, Organization } from '@/lib
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Users, DollarSign, Mail, Globe, MessageSquare, CalendarDays, School } from 'lucide-react';
+import { ArrowLeft, Users, Mail, Globe, MessageSquare, CalendarDays, School } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -81,10 +81,6 @@ export default async function OrganizationProfilePage({ params }: { params: { id
                 <div className="flex items-center text-muted-foreground">
                   <CalendarDays className="h-5 w-5 mr-3 text-primary" />
                   <span>Founded: {organization.dateFounded}</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <DollarSign className="h-5 w-5 mr-3 text-primary" />
-                  <span>Starting Partnership Rate: ${organization.startingRate}</span>
                 </div>
             </div>
           </div>
