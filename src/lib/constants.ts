@@ -5,7 +5,6 @@ export const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/browse-organizations', label: 'Browse Organizations' },
-  { href: '/profile-generator', label: 'AI Profile Generator' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
