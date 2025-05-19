@@ -42,16 +42,13 @@ export default function ContactForm() {
   async function onSubmit(values: ContactFormValues) {
     setIsSubmitting(true);
     try {
-      // This would typically call a server action or API endpoint
-      // For now, we'll simulate success
-      // await new Promise(resolve => setTimeout(resolve, 1000));
       const result = await sendContactMessage(values);
 
       if (result.success) {
         toast({
           title: "Message Sent!",
           description: "Thanks for reaching out. We'll get back to you soon.",
-          variant: "default",
+          variant: "default", // Will use new theme colors
         });
         form.reset();
       } else {
@@ -80,9 +77,9 @@ export default function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Full Name</FormLabel>
+              <FormLabel className="text-foreground">Full Name</FormLabel>
               <FormControl>
-                <Input placeholder="John Doe" {...field} />
+                <Input placeholder="John Doe" {...field} className="rounded-md" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -93,9 +90,9 @@ export default function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email Address</FormLabel>
+              <FormLabel className="text-foreground">Email Address</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="you@example.com" {...field} />
+                <Input type="email" placeholder="you@example.com" {...field} className="rounded-md"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -106,11 +103,11 @@ export default function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel className="text-foreground">Message</FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Tell us how we can help..."
-                  className="resize-none min-h-[120px]"
+                  className="resize-none min-h-[120px] rounded-md"
                   {...field}
                 />
               </FormControl>
@@ -118,7 +115,7 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" disabled={isSubmitting}>
+        <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-foreground hover:text-primary rounded-full" disabled={isSubmitting}>
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </Button>
       </form>

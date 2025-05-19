@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-// Removed Geist font imports as we are switching to Avenir Book via Tailwind config
+import { Inter } from 'next/font/google'; // Import Inter font
 import './globals.css';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster"
 
-// Removed geistSans and geistMono constant declarations
+const inter = Inter({ subsets: ['latin'] }); // Initialize Inter font
 
 export const metadata: Metadata = {
   title: 'AdOptimal: Campus Connect',
@@ -19,8 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* Removed font variables from body className */}
-      <body className={`antialiased flex flex-col min-h-screen`}>
+      <body className={`${inter.className} antialiased flex flex-col min-h-screen bg-background`}>
         <Header />
         <main className="flex-grow container mx-auto px-4 py-8">
           {children}

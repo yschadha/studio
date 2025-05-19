@@ -19,7 +19,6 @@ export default function BrowseOrganizationsPage() {
   const [followerRange, setFollowerRange] = useState<[number, number]>([0, MAX_FOLLOWERS]);
   const [rateRange, setRateRange] = useState<[number, number]>([0, MAX_RATE]);
   
-  // Client-side hydration guard
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);
@@ -44,15 +43,14 @@ export default function BrowseOrganizationsPage() {
   };
 
   if (!isMounted) {
-    // Render a loading state or null until the component is mounted
     return (
       <div className="space-y-8 py-8">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-primary mb-2">Discover Student Organizations</h1>
-          <p className="text-lg text-foreground/80">Find the perfect partners for your campus campaigns.</p>
+          <h1 className="text-4xl font-bold text-foreground mb-2">Discover Student Organizations</h1>
+          <p className="text-lg text-muted-foreground">Find the perfect partners for your campus campaigns.</p>
         </div>
-        <div className="p-6 bg-card rounded-lg shadow-md space-y-6">
-          <p>Loading filters...</p>
+        <div className="p-6 bg-card rounded-xl shadow-lg space-y-6">
+          <p className="text-muted-foreground">Loading filters...</p>
         </div>
          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[...Array(6)].map((_, i) => (
@@ -60,7 +58,7 @@ export default function BrowseOrganizationsPage() {
               <div className="h-48 bg-muted rounded-md mb-4"></div>
               <div className="h-6 bg-muted rounded w-3/4 mb-2"></div>
               <div className="h-4 bg-muted rounded w-1/2 mb-4"></div>
-              <div className="h-10 bg-muted rounded w-full"></div>
+              <div className="h-10 bg-muted rounded-full w-full"></div>
             </div>
           ))}
         </div>
@@ -71,15 +69,14 @@ export default function BrowseOrganizationsPage() {
   return (
     <div className="space-y-8 py-8">
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-primary mb-2">Discover Student Organizations</h1>
-        <p className="text-lg text-foreground/80">Find the perfect partners for your campus campaigns.</p>
+        <h1 className="text-4xl font-bold text-foreground mb-2">Discover Student Organizations</h1>
+        <p className="text-lg text-muted-foreground">Find the perfect partners for your campus campaigns.</p>
       </div>
 
-      {/* Filters Section */}
       <div className="p-6 bg-card rounded-xl shadow-lg space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
           <div>
-            <Label htmlFor="search" className="block text-sm font-medium text-foreground/90 mb-1">Search by Name</Label>
+            <Label htmlFor="search" className="block text-sm font-medium text-foreground mb-1">Search by Name</Label>
             <div className="relative">
               <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
@@ -88,21 +85,21 @@ export default function BrowseOrganizationsPage() {
                 placeholder="e.g., Tech Club"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
+                className="pl-10 rounded-md" 
               />
             </div>
           </div>
           <div>
-            <Label htmlFor="category" className="block text-sm font-medium text-foreground/90 mb-1">Category</Label>
+            <Label htmlFor="category" className="block text-sm font-medium text-foreground mb-1">Category</Label>
             <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger id="category">
+              <SelectTrigger id="category" className="rounded-md">
                 <SelectValue placeholder="Select Category" />
               </SelectTrigger>
               <SelectContent>
                 {ORGANIZATION_CATEGORIES.map((cat) => (
                   <SelectItem key={cat.value} value={cat.value}>
                     <div className="flex items-center">
-                      <cat.icon className="h-4 w-4 mr-2 text-muted-foreground" />
+                      <cat.icon className="h-4 w-4 mr-2 text-primary" />
                       {cat.label}
                     </div>
                   </SelectItem>
@@ -112,7 +109,7 @@ export default function BrowseOrganizationsPage() {
           </div>
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <Label htmlFor="followers" className="block text-sm font-medium text-foreground/90 mb-1">
+              <Label htmlFor="followers" className="block text-sm font-medium text-foreground mb-1">
                 Instagram Followers: {followerRange[0].toLocaleString()} - {followerRange[1].toLocaleString()}
               </Label>
               <Slider
@@ -126,7 +123,7 @@ export default function BrowseOrganizationsPage() {
               />
             </div>
             <div>
-              <Label htmlFor="rate" className="block text-sm font-medium text-foreground/90 mb-1">
+              <Label htmlFor="rate" className="block text-sm font-medium text-foreground mb-1">
                 Starting Rate: ${rateRange[0]} - ${rateRange[1]}
               </Label>
               <Slider
@@ -142,14 +139,13 @@ export default function BrowseOrganizationsPage() {
           </div>
         </div>
         <div className="flex justify-end">
-          <Button variant="ghost" onClick={resetFilters} className="text-sm text-accent hover:text-accent/80">
+          <Button variant="ghost" onClick={resetFilters} className="text-sm text-primary hover:text-primary/80 rounded-full">
             <XIcon className="h-4 w-4 mr-1" />
             Reset Filters
           </Button>
         </div>
       </div>
 
-      {/* Organizations Grid */}
       {filteredOrganizations.length > 0 ? (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredOrganizations.map((org) => (

@@ -4,77 +4,76 @@
 
 @layer base {
   :root {
-    --background: 216 33% 97%; /* #F5F7FA Soft Light Gray */
-    --foreground: 215 39% 17%; /* #1E293B Slate Text */
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 0%; /* Black - for headlines */
 
     --card: 0 0% 100%; /* White for cards */
-    --card-foreground: 215 39% 17%; /* #1E293B Slate Text */
+    --card-foreground: 0 0% 0%; /* Black for text on cards */
 
     --popover: 0 0% 100%; /* White */
-    --popover-foreground: 215 39% 17%; /* #1E293B Slate Text */
+    --popover-foreground: 0 0% 0%; /* Black */
 
-    --primary: 212 81% 15%; /* #0A2342 Navy Blue */
-    --primary-foreground: 0 0% 100%; /* White for text on Navy Blue */
+    --primary: 75 100% 50%; /* Lime Green #BFFF00 */
+    --primary-foreground: 0 0% 0%; /* Black for text on Lime Green */
 
-    --secondary: 212 81% 45%; /* A lighter Navy Blue for secondary elements */
-    --secondary-foreground: 0 0% 100%; /* White for text on lighter Navy */
+    --secondary: 0 0% 95%; /* Light Gray for subtle secondary elements */
+    --secondary-foreground: 0 0% 0%; /* Black */
 
-    --muted: 216 33% 92%; /* Lighter than background for muted elements */
-    --muted-foreground: 215 25% 65%; /* #94A3B8 Subtext Gray */
+    --muted: 0 0% 96%; /* Very Light Gray */
+    --muted-foreground: 215 14% 34%; /* Dark Gray #4B5563 - for body text, subtext */
 
-    --accent: 49 100% 50%; /* #FFD100 UCLA Gold */
-    --accent-foreground: 212 81% 15%; /* #0A2342 Navy Blue for text on Gold */
+    --accent: 75 100% 50%; /* Lime Green #BFFF00 */
+    --accent-foreground: 0 0% 0%; /* Black */
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 25% 85%; /* Light gray for borders */
-    --input: 215 25% 90%; /* Lighter gray for input backgrounds */
-    --ring: 212 81% 15%; /* Navy Blue for focus rings */
+    --border: 0 0% 85%; /* Light gray for borders #D9D9D9 */
+    --input: 0 0% 100%; /* White bg for inputs, border will be --border */
+    --ring: 75 100% 50%; /* Lime Green for focus rings */
 
-    --chart-1: 212 81% 15%; /* Primary */
-    --chart-2: 49 100% 50%; /* Accent */
-    --chart-3: 212 81% 45%; /* Secondary */
-    --chart-4: 215 25% 65%; /* Muted-foreground */
-    --chart-5: 215 39% 17%; /* Foreground */
-    --radius: 0.5rem;
+    --chart-1: 75 100% 50%; /* Lime Green */
+    --chart-2: 0 0% 20%; /* Dark Gray */
+    --chart-3: 0 0% 40%; /* Medium Gray */
+    --chart-4: 215 14% 34%; /* Muted-foreground */
+    --chart-5: 0 0% 0%; /* Foreground */
+    --radius: 0.5rem; /* Default radius for cards etc. */
   }
 
   .dark {
-    /* Derived dark theme - might need specific dark palette from user later */
-    --background: 215 39% 10%; /* Darker Slate */
-    --foreground: 216 33% 90%; /* Light Grayish Blue */
+    --background: 0 0% 8%; /* Dark Gray/Near Black */
+    --foreground: 0 0% 95%; /* Near White/Light Gray - for headlines */
 
-    --card: 212 81% 12%; /* Darker Navy */
-    --card-foreground: 216 33% 90%;
+    --card: 0 0% 10%; /* Slightly lighter than background */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 212 81% 12%;
-    --popover-foreground: 216 33% 90%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 49 100% 55%; /* Brighter Gold for dark mode primary */
-    --primary-foreground: 212 81% 15%; /* Navy for text on Gold */
+    --primary: 75 100% 50%; /* Lime Green */
+    --primary-foreground: 0 0% 0%; /* Black for text on Lime Green */
     
-    --secondary: 212 81% 25%; /* Darker shade of secondary */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%; /* Darker shade of secondary */
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 212 81% 20%; /* Dark muted */
-    --muted-foreground: 215 25% 55%; /* Darker Subtext Gray */
+    --muted: 0 0% 12%; /* Dark muted */
+    --muted-foreground: 0 0% 65%; /* Lighter Gray for body text on dark */
 
-    --accent: 49 100% 60%; /* UCLA Gold, slightly brighter for dark */
-    --accent-foreground: 212 81% 10%; /* Darkest Navy for text on Gold */
+    --accent: 75 100% 50%; /* Lime Green */
+    --accent-foreground: 0 0% 0%; /* Black */
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 212 81% 25%; 
-    --input: 212 81% 22%;
-    --ring: 49 100% 55%; 
+    --border: 0 0% 25%; 
+    --input: 0 0% 12%;
+    --ring: 75 100% 50%; 
 
-    --chart-1: 49 100% 55%;
-    --chart-2: 212 81% 15%;
-    --chart-3: 49 100% 70%;
-    --chart-4: 215 25% 55%;
-    --chart-5: 216 33% 90%;
+    --chart-1: 75 100% 50%;
+    --chart-2: 0 0% 80%;
+    --chart-3: 75 100% 60%;
+    --chart-4: 0 0% 65%;
+    --chart-5: 0 0% 95%;
   }
 }
 
@@ -83,6 +82,9 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-muted-foreground; /* Default body text to dark gray */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground; /* Headlines to black */
   }
 }

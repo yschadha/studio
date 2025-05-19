@@ -11,7 +11,7 @@ export default {
   	extend: {
       fontFamily: {
         sans: [
-          'Avenir Book', // Added Avenir Book as the primary sans-serif font
+          'Inter', // Set Inter as the primary sans-serif font
           'ui-sans-serif', 
           'system-ui', 
           '-apple-system', 
@@ -81,9 +81,10 @@ export default {
   			}
   		},
   		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+        lg: 'var(--radius)', // 0.5rem
+        md: 'calc(var(--radius) - 2px)', // 0.375rem
+        sm: 'calc(var(--radius) - 4px)', // 0.25rem
+        full: '9999px', // For rounded-full
   		},
   		keyframes: {
   			'accordion-down': {

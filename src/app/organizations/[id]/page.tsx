@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { MOCK_ORGANIZATIONS, ORGANIZATION_CATEGORIES, Organization } from '@/lib/constants';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'; // CardDescription removed as not directly used for titles
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Users, DollarSign, Mail, Globe, LinkIcon as ExternalLinkIcon } from 'lucide-react';
+import { ArrowLeft, Users, DollarSign, Mail, Globe, MessageSquare } from 'lucide-react'; // Replaced LinkIcon with MessageSquare for discuss
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -14,6 +14,7 @@ export async function generateStaticParams() {
 }
 
 async function getOrganization(id: string): Promise<Organization | undefined> {
+  // Simulate API delay if needed: await new Promise(resolve => setTimeout(resolve, 1000));
   return MOCK_ORGANIZATIONS.find(org => org.id === id);
 }
 
@@ -28,29 +29,29 @@ export default async function OrganizationProfilePage({ params }: { params: { id
   const CategoryIcon = category?.icon;
 
   return (
-    <div className="py-8 space-y-8">
-      <Button variant="outline" asChild>
+    <div className="py-8 md:py-12 space-y-8">
+      <Button variant="outline" asChild className="rounded-full">
         <Link href="/browse-organizations">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Browse
         </Link>
       </Button>
 
-      <Card className="overflow-hidden shadow-xl">
-        <CardHeader className="relative p-0 aspect-[2/1] md:aspect-[3/1]">
+      <Card className="overflow-hidden shadow-xl bg-card">
+        <CardHeader className="relative p-0 aspect-[16/9] md:aspect-[21/9]">
           <Image
             src={organization.profileImage}
             alt={`${organization.name} banner`}
             fill
             className="object-cover"
-            data-ai-hint={`${organization.type} event`}
+            data-ai-hint={`${organization.type} event campus`}
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
           <div className="absolute bottom-0 left-0 p-6 md:p-8">
-            <CardTitle className="text-3xl md:text-4xl font-bold text-white">{organization.name}</CardTitle>
+            <h1 className="text-3xl md:text-4xl font-bold text-white">{organization.name}</h1>
             {category && (
-              <Badge variant="secondary" className="mt-2 bg-white/20 text-white backdrop-blur-sm">
+              <Badge variant="default" className="mt-2 bg-primary/80 text-primary-foreground backdrop-blur-sm border-none">
                 {CategoryIcon && <CategoryIcon className="h-4 w-4 mr-2" />}
                 {category.label}
               </Badge>
@@ -59,42 +60,42 @@ export default async function OrganizationProfilePage({ params }: { params: { id
         </CardHeader>
         <CardContent className="p-6 md:p-8 grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2 space-y-6">
-            <h2 className="text-2xl font-semibold text-primary">About Us</h2>
-            <p className="text-foreground/80 leading-relaxed">{organization.description}</p>
+            <h2 className="text-2xl font-semibold text-foreground">About Us</h2>
+            <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{organization.description}</p>
             
             <div className="space-y-4 pt-4 border-t">
-                <h3 className="text-xl font-semibold text-primary">Key Information</h3>
-                <div className="flex items-center text-foreground/70">
-                  <Users className="h-5 w-5 mr-3 text-accent" />
+                <h3 className="text-xl font-semibold text-foreground">Key Information</h3>
+                <div className="flex items-center text-muted-foreground">
+                  <Users className="h-5 w-5 mr-3 text-primary" />
                   <span>{organization.instagramFollowers.toLocaleString()} Instagram Followers</span>
                 </div>
-                <div className="flex items-center text-foreground/70">
-                  <DollarSign className="h-5 w-5 mr-3 text-accent" />
+                <div className="flex items-center text-muted-foreground">
+                  <DollarSign className="h-5 w-5 mr-3 text-primary" />
                   <span>Starting Partnership Rate: ${organization.startingRate}</span>
                 </div>
             </div>
           </div>
 
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-primary">Contact & Links</h3>
+            <h3 className="text-xl font-semibold text-foreground">Contact & Links</h3>
             {organization.contactEmail && (
-              <div className="flex items-center">
-                 <Mail className="h-5 w-5 mr-3 text-accent flex-shrink-0" />
-                <a href={`mailto:${organization.contactEmail}`} className="text-accent hover:underline break-all">
+              <div className="flex items-start">
+                 <Mail className="h-5 w-5 mr-3 text-primary flex-shrink-0 mt-1" />
+                <a href={`mailto:${organization.contactEmail}`} className="text-primary hover:underline break-all">
                   {organization.contactEmail}
                 </a>
               </div>
             )}
             {organization.website && (
-              <div className="flex items-center">
-                <Globe className="h-5 w-5 mr-3 text-accent flex-shrink-0" />
-                <a href={organization.website} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline break-all">
+              <div className="flex items-start">
+                <Globe className="h-5 w-5 mr-3 text-primary flex-shrink-0 mt-1" />
+                <a href={organization.website} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-all">
                   {organization.website}
                 </a>
               </div>
             )}
-             <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground mt-4">
-                <ExternalLinkIcon className="h-4 w-4 mr-2" />
+             <Button className="w-full bg-primary text-primary-foreground hover:bg-foreground hover:text-primary rounded-full mt-4 py-3">
+                <MessageSquare className="h-5 w-5 mr-2" />
                 Discuss Partnership
             </Button>
           </div>
