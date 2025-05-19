@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Target, Megaphone, Zap } from 'lucide-react';
 
 export default function HomePage() {
@@ -18,7 +18,7 @@ export default function HomePage() {
           </p>
           <div className="relative w-full max-w-5xl aspect-[16/7] md:aspect-[16/6] mx-auto mb-10 rounded-lg shadow-2xl overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxmcmF0fGVufDB8fHx8MTc0NzY5MjI0N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+              src="https://images.unsplash.com/photo-1554005702-71599e422c98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx1Y2xhfGVufDB8fHx8MTc0NzY5MjQzNnww&ixlib=rb-4.1.0&q=80&w=1080"
               alt="Students handing out flyers or tabling on a vibrant campus"
               fill
               className="object-cover"
@@ -29,7 +29,7 @@ export default function HomePage() {
           <Button
             size="lg"
             asChild
-            className="rounded-full px-6 py-3 text-lg font-semibold" 
+            className="rounded-full px-6 py-3 text-lg font-semibold"
           >
             <Link href="/browse-organizations">
               Explore Student Orgs
