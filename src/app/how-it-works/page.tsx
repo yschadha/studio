@@ -9,7 +9,7 @@ const steps = [
     icon: Search,
     title: '1. Find a Student Org',
     description: 'Browse our extensive directory of student organizations. Use filters like category, follower count, and promotion rates to find the perfect match for your campaign.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50c3xlbnwwfHx8fDE3NDc2NzE0NDd8MA&ixlib=rb-4.1.0&q=80&w=1080',
     imageHint: 'search student organization',
   },
   {
