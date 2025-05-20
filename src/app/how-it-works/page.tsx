@@ -24,7 +24,7 @@ const steps = [
     icon: Send,
     title: '3. Send a Request',
     description: 'Easily send a partnership request to the selected organization with your campaign details and goals. Communicate directly through the platform.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1521931961826-fe48677230a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtZXNzYWdlfGVufDB8fHx8MTc0NzcwMzQ4MHww&ixlib=rb-4.1.0&q=80&w=1080',
     imageHint: 'send partnership request',
   },
   {
