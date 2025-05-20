@@ -93,7 +93,7 @@ export default function HowItWorksPage() {
                     alt={step.title}
                     width={600}
                     height={400}
-                    className="object-cover w-full h-64 md:h-full"
+                    className="object-cover w-full h-64 md:h-96"
                     data-ai-hint={step.imageHint}
                   />
                 </div>
