@@ -53,7 +53,7 @@ export async function sendContactMessage(
   try {
     const { data, error } = await resendClient.emails.send({
       from: 'AdOptimal Contact Form <onboarding@resend.dev>', // IMPORTANT: For Resend, use 'onboarding@resend.dev' for testing or a verified domain.
-      to: ['your-email@example.com'], // !!! REPLACE THIS WITH YOUR ACTUAL EMAIL ADDRESS !!!
+      to: ['yschadha@gmail.com'], // Updated to user's specified email
       subject: `New Contact Message from ${name} via AdOptimal`,
       reply_to: email,
       html: `
