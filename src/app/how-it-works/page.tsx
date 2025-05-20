@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Search, Edit3, Send, Bell, Target, Award, Zap as ZapIcon, Users } from 'lucide-react'; // Zap is already used, aliasing to ZapIcon
+import { Search, Edit3, Send, Target, Award, Zap as ZapIcon, Users } from 'lucide-react'; // Zap is already used, aliasing to ZapIcon
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -27,13 +27,13 @@ const steps = [
     image: 'https://images.unsplash.com/photo-1521931961826-fe48677230a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtZXNzYWdlfGVufDB8fHx8MTc0NzcwMzQ4MHww&ixlib=rb-4.1.0&q=80&w=1080',
     imageHint: 'send partnership request',
   },
-  {
-    icon: Bell,
-    title: '4. Get Notified When It’s Live',
-    description: 'Receive notifications once your promotion is active. Track performance and see the impact of your campus collaboration.',
-    image: 'https://placehold.co/600x400.png',
-    imageHint: 'campaign live notification',
-  }
+  // { // Removed Step 4
+  //   icon: Bell,
+  //   title: '4. Get Notified When It’s Live',
+  //   description: 'Receive notifications once your promotion is active. Track performance and see the impact of your campus collaboration.',
+  //   image: 'https://placehold.co/600x400.png',
+  //   imageHint: 'campaign live notification',
+  // }
 ];
 
 const benefits = [
