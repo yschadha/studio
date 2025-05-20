@@ -10,9 +10,29 @@ const contactFormSchema = z.object({
   message: z.string().min(10).max(500),
 });
 
-// Initialize Resend with your API key from environment variables
-// Make sure to set RESEND_API_KEY in your .env or .env.local file
-const resend = new Resend(process.env.RESEND_API_KEY);
+let resendClient: Resend | null = null;
+
+if (process.env.RESEND_API_KEY) {
+  try {
+    resendClient = new Resend(process.env.RESEND_API_KEY);
+  } catch (e: any) {
+    console.error("--------------------------------------------------------------------------------------------------");
+    console.error("ERROR: Failed to initialize Resend client. Please check your RESEND_API_KEY.");
+    console.error("Details:", e.message);
+    console.error("Email functionality in the contact form will be disabled.");
+    console.error("--------------------------------------------------------------------------------------------------");
+  }
+} else {
+  console.warn(
+    "--------------------------------------------------------------------------------------------------\n" +
+    "WARNING: RESEND_API_KEY is not set in your environment variables (.env or .env.local file).\n" +
+    "Email functionality in the contact form will be disabled until the API key is provided.\n" +
+    "Please create or update your .env file with RESEND_API_KEY=your_key and restart the server.\n" +
+    "Example .env content:\n" +
+    "RESEND_API_KEY=re_12345678_abcdefghijklmnop\n" +
+    "--------------------------------------------------------------------------------------------------"
+  );
+}
 
 export async function sendContactMessage(
   values: z.infer<typeof contactFormSchema>
@@ -23,22 +43,16 @@ export async function sendContactMessage(
     return { success: false, error: "Invalid form data." };
   }
 
-  const { name, email, message } = validatedFields.data;
-
-  // Ensure API key is available
-  if (!process.env.RESEND_API_KEY) {
-    console.error('Resend API key is not set. Email not sent.');
-    // For production, you might want to return an error to the user or handle this more gracefully.
-    // For now, we'll log it and proceed as if it failed to send for the user.
-    return { success: false, error: "Email configuration error. Please contact support." };
+  if (!resendClient) {
+    console.error('Resend client is not initialized. API key might be missing, invalid, or not set in .env file. Email not sent.');
+    return { success: false, error: "Email configuration error. Please contact support or check server logs." };
   }
 
+  const { name, email, message } = validatedFields.data;
+
   try {
-    // Replace with your desired "to" and "from" email addresses
-    // The "from" address for Resend typically needs to be a verified domain
-    // or use 'onboarding@resend.dev' for testing if your domain isn't verified yet.
-    const { data, error } = await resend.emails.send({
-      from: 'AdOptimal Contact Form <onboarding@resend.dev>', // Change this to your verified 'from' email
+    const { data, error } = await resendClient.emails.send({
+      from: 'AdOptimal Contact Form <onboarding@resend.dev>', // IMPORTANT: For Resend, use 'onboarding@resend.dev' for testing or a verified domain.
       to: ['your-email@example.com'], // !!! REPLACE THIS WITH YOUR ACTUAL EMAIL ADDRESS !!!
       subject: `New Contact Message from ${name} via AdOptimal`,
       reply_to: email,
