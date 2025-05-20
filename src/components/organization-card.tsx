@@ -24,7 +24,7 @@ export default function OrganizationCard({ organization }: OrganizationCardProps
     <Card className="flex flex-col h-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-card transform hover:scale-102">
       <CardHeader className="relative p-0">
         <Image
-          src={organization.profileImage}
+ src={organization.id === 'bgi-1' ? '/BGILogo.png' : organization.profileImage}
           alt={organization.name}
           width={400}
           height={200} 

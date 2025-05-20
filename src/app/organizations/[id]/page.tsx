@@ -44,7 +44,7 @@ export default async function OrganizationProfilePage({ params }: { params: { id
       <Card className="overflow-hidden shadow-xl bg-card">
         <CardHeader className="relative p-0 aspect-[16/9] md:aspect-[21/9]">
           <Image
-            src={organization.profileImage}
+ src={organization.id === 'bgi-1' ? '/BGILogo.png' : organization.profileImage}
             alt={`${organization.name} banner`}
             fill
             className="object-cover"
