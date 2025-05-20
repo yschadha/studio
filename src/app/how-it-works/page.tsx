@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Search, Edit3, Send, Bell, Target, Award, Zap as ZapIcon, Users } from 'lucide-react'; // Zap is already used, aliasing to ZapIcon
@@ -16,7 +17,7 @@ const steps = [
     icon: Edit3,
     title: '2. Choose a Promo Type',
     description: 'Select from various promotion packages offered by organizations, or propose a custom collaboration that fits your needs.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://images.unsplash.com/photo-1621600411688-4be93cd68504?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8cGhvdG98ZW58MHx8fHwxNzQ3NzAzMzk2fDA&ixlib=rb-4.1.0&q=80&w=1080',
     imageHint: 'select promotion package',
   },
   {
