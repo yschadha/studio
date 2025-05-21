@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 0%; /* Black - for headlines */
+
+    --card: 0 0% 100%; /* White for cards */
+    --card-foreground: 0 0% 0%; /* Black for text on cards */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 0 0% 0%; /* Black */
+
+    --primary: 128 65% 59%; /* New Lime Green #53da65 */
+    --primary-foreground: 0 0% 0%; /* Black for text on New Lime Green */
+
+    --secondary: 0 0% 95%; /* Light Gray for subtle secondary elements */
+    --secondary-foreground: 0 0% 0%; /* Black */
+
+    --muted: 0 0% 96%; /* Very Light Gray */
+    --muted-foreground: 215 14% 34%; /* Dark Gray #4B5563 - for body text, subtext */
+
+    --accent: 128 65% 59%; /* New Lime Green #53da65 */
+    --accent-foreground: 0 0% 0%; /* Black */
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 85%; /* Light gray for borders #D9D9D9 */
+    --input: 0 0% 100%; /* White bg for inputs, border will be --border */
+    --ring: 128 65% 59%; /* New Lime Green for focus rings */
+
+    --chart-1: 128 65% 59%; /* New Lime Green */
+    --chart-2: 0 0% 20%; /* Dark Gray */
+    --chart-3: 0 0% 40%; /* Medium Gray */
+    --chart-4: 215 14% 34%; /* Muted-foreground */
+    --chart-5: 0 0% 0%; /* Foreground */
+    --radius: 0.5rem; /* Default radius for cards etc. */
+  }
+
+  .dark {
+    --background: 0 0% 8%; /* Dark Gray/Near Black */
+    --foreground: 0 0% 95%; /* Near White/Light Gray - for headlines */
+
+    --card: 0 0% 10%; /* Slightly lighter than background */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 128 65% 59%; /* New Lime Green */
+    --primary-foreground: 0 0% 0%; /* Black for text on New Lime Green */
+    
+    --secondary: 0 0% 15%; /* Darker shade of secondary */
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 12%; /* Dark muted */
+    --muted-foreground: 0 0% 65%; /* Lighter Gray for body text on dark */
+
+    --accent: 128 65% 59%; /* New Lime Green */
+    --accent-foreground: 0 0% 0%; /* Black */
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 25%; 
+    --input: 0 0% 12%;
+    --ring: 128 65% 59%; 
+
+    --chart-1: 128 65% 59%;
+    --chart-2: 0 0% 80%;
+    --chart-3: 128 65% 73%; /* Lighter shade of New Lime Green */
+    --chart-4: 0 0% 65%;
+    --chart-5: 0 0% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-muted-foreground; /* Default body text to dark gray */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground; /* Headlines to black */
+  }
+}
